@@ -18,6 +18,7 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
+import { Button } from "@material-ui/core";
 
 const drawerWidth = 240;
 
@@ -31,17 +32,13 @@ const styles = theme => ({
       duration: theme.transitions.duration.leavingScreen
     })
   },
-  appBarShift: {
-    width: `calc(100% - ${drawerWidth}px)`,
-    marginLeft: drawerWidth,
-    transition: theme.transitions.create(["margin", "width"], {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen
-    })
-  },
   menuButton: {
     marginLeft: 12,
-    marginRight: 20
+    marginRight: 12
+  },
+  rightToolbar: {
+    marginLeft: "auto",
+    marginRight: -12
   },
   hide: {
     display: "none"
@@ -59,22 +56,6 @@ const styles = theme => ({
     padding: "0 8px",
     ...theme.mixins.toolbar,
     justifyContent: "flex-end"
-  },
-  content: {
-    flexGrow: 1,
-    padding: theme.spacing.unit * 3,
-    transition: theme.transitions.create("margin", {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen
-    }),
-    marginLeft: -drawerWidth
-  },
-  contentShift: {
-    transition: theme.transitions.create("margin", {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen
-    }),
-    marginLeft: 0
   }
 });
 
@@ -98,30 +79,28 @@ class SideDrawer extends React.Component {
     return (
       <div className={classes.root}>
         <CssBaseline />
-        <AppBar
-          position="fixed"
-          className={classNames(classes.appBar, {
-            [classes.appBarShift]: open
-          })}
-        >
-          <Toolbar disableGutters={!open}>
-            <IconButton
-              color="inherit"
-              aria-label="Open drawer"
-              onClick={this.handleDrawerOpen}
-              className={classNames(classes.menuButton, open && classes.hide)}
-            >
-              <MenuIcon />
-            </IconButton>
+        <AppBar position="fixed" className={classNames(classes.appBar)}>
+          <Toolbar>
             <Typography variant="h6" color="inherit" noWrap>
               jeff d stephens
             </Typography>
+
+            <section className={classes.rightToolbar}>
+              <IconButton
+                color="inherit"
+                aria-label="Open drawer"
+                onClick={this.handleDrawerOpen}
+                className={classNames(classes.menuButton, open && classes.hide)}
+              >
+                <MenuIcon />
+              </IconButton>
+            </section>
           </Toolbar>
         </AppBar>
         <Drawer
           className={classes.drawer}
           variant="persistent"
-          anchor="left"
+          anchor="right"
           open={open}
           classes={{
             paper: classes.drawerPaper
@@ -130,34 +109,21 @@ class SideDrawer extends React.Component {
           <div className={classes.drawerHeader}>
             <IconButton onClick={this.handleDrawerClose}>
               {theme.direction === "ltr" ? (
-                <ChevronLeftIcon />
-              ) : (
                 <ChevronRightIcon />
+              ) : (
+                <ChevronLeftIcon />
               )}
             </IconButton>
           </div>
           <Divider />
           <List>
-            {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
+            {["About", "Blog", "Contact"].map((text, index) => (
               <ListItem button key={text}>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
                 <ListItemText primary={text} />
               </ListItem>
             ))}
           </List>
           <Divider />
-          <List>
-            {["All mail", "Trash", "Spam"].map((text, index) => (
-              <ListItem button key={text}>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItem>
-            ))}
-          </List>
         </Drawer>
       </div>
     );
