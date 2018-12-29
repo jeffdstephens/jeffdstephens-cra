@@ -11,10 +11,7 @@ class JumboIntro extends React.Component {
           solution architecture, and everything else that is pure badass
           technical innovation – so am I!
         </p>
-        <p>Let’s go play with toys!</p>
-        <p>
-          <Button bsStyle="primary">Get Started</Button>
-        </p>
+        <h3>Let’s go play with toys!</h3>
       </Jumbotron>
     );
   }

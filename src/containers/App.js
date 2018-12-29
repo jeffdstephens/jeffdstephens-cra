@@ -11,7 +11,6 @@ class App extends Component {
       <div className="App">
         <BootstrapNavBar />
         <JumboIntro />
-
         <AboutGrid />
       </div>
     );
