@@ -4,7 +4,7 @@ import { Jumbotron, Button } from "react-bootstrap";
 class JumboIntro extends React.Component {
   render() {
     return (
-      <Jumbotron>
+      <Jumbotron style={styles.container}>
         <h1>Welcome!</h1>
         <p>
           If you are interested in the amazing world of information technology,
@@ -19,5 +19,14 @@ class JumboIntro extends React.Component {
     );
   }
 }
+
+const bgImage = "/images/jeffdstephens-header.jpg";
+
+const styles = {
+  container: {
+    color: "white",
+    backgroundImage: `url(${bgImage})`
+  }
+};
 
 export default JumboIntro;
