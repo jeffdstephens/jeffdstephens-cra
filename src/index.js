@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
+import App from "./containers/App";
 import * as serviceWorker from "./serviceWorker";
 import { Route, Link, BrowserRouter as Router } from "react-router-dom";
-import Contact from "./contact";
-import About from "./about";
+import Contact from "./containers/contact";
+import About from "./containers/about";
 
 const routing = (
   <Router>

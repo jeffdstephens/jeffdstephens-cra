@@ -4,11 +4,34 @@ import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
+import styled from "styled-components";
+
+// this is my styled component
+const Title = styled.section`
+  font-size: 3em;
+  font-family: Roboto;
+  text-align: left;
+  color: gray20;
+  padding-bottom: 1em;
+  padding-left: 2em;
+  padding-right: 4em;
+`;
+
+const Wrapper = styled.section`
+  font-size: 1.5em;
+  font-family: Roboto;
+  text-align: left;
+  color: gray;
+  padding-bottom: 1em;
+  padding-left: 4em;
+  padding-right: 4em;
+`;
 
 const styles = theme => ({
   root: {
     flexGrow: 1
   },
+
   paper: {
     //height: 320,
     //width: 240
@@ -67,34 +90,27 @@ class AboutGrid extends React.Component {
               spacing={Number(spacing)}
             >
               <Grid item sm={10} direction="column">
-                <Typography variant="h2" color="inherit" align="left">
-                  Hi! I'm Jeff.
-                </Typography>
-                <p />
-                <Typography variant="h6">
-                  <p align="left">
-                    Welcome to my website. If you are here you are probably a
-                    lot like me. You have a full-time job but are constantly
-                    looking to explore your passions and expand your horizons.
-                  </p>
-                  <p align="left">
-                    I have almost 25 years of experience in the IT industry and
-                    have also been blogging, podcasting, and building online
-                    platforms on the side since 2013.
-                  </p>
-                  <p align="left">
-                    I’m currently serving as the Chief Technology Officer for
-                    Dignari while exploring multiple online projects such as my
-                    site dedicated to blogging, Top Shelf Blogging. I also love
-                    to write and have been featured on numerous online sites
-                    such as Entrepreneur.com. I try to share my journey
-                    exploring innovative technology and creative
-                    entrepreneurship in order to hopefully make your journey
-                    just a little bit easier. Feel free to reach out and get in
-                    touch with me. I’m always looking to learn from others and
-                    help out however I can.
-                  </p>
-                </Typography>
+                <Title>Hi! I'm Jeff.</Title>
+                <Wrapper>Welcome to my website.</Wrapper>
+                <Wrapper>
+                  If you are here you are probably a lot like me. You have a
+                  full-time job but are constantly looking to explore your
+                  passions and expand your horizons. I have almost 25 years of
+                  experience in the IT industry and have also been blogging,
+                  podcasting, and building online platforms on the side since
+                  2013.{" "}
+                </Wrapper>
+                <Wrapper>
+                  I’m currently serving as the Chief Technology Officer for
+                  Dignari while exploring multiple online projects such as my
+                  site dedicated to blogging, Top Shelf Blogging. I also love to
+                  write and have been featured on numerous online sites such as
+                  Entrepreneur.com. I try to share my journey exploring
+                  innovative technology and creative entrepreneurship in order
+                  to hopefully make your journey just a little bit easier. Feel
+                  free to reach out and get in touch with me. I’m always looking
+                  to learn from others and help out however I can.
+                </Wrapper>
               </Grid>
             </Grid>
           </div>
