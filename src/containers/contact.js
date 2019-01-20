@@ -1,5 +1,5 @@
 import React from "react";
-import BootstrapNavBar from "./components/BootstrapNavBar";
+import BootstrapNavBar from "../components/BootstrapNavBar";
 
 class Contact extends React.Component {
   render() {
