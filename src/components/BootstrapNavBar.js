@@ -13,13 +13,13 @@ class BootstrapNavBar extends React.Component {
         </Navbar.Header>
         <Navbar.Collapse>
           <Nav pullRight>
-            <NavItem eventKey={1} href="#">
+            <NavItem eventKey={1} href="./about">
               About
             </NavItem>
             <NavItem eventKey={2} href="#">
               Blog
             </NavItem>
-            <NavItem eventKey={1} href="#">
+            <NavItem eventKey={1} href="./contact">
               Contact
             </NavItem>
           </Nav>

@@ -50,6 +50,7 @@ class AboutGrid extends React.Component {
                     src="/images/workwithjeffdstephens.JPG"
                     width="100%"
                     height="100%"
+                    alt=""
                   />
                 </Paper>
               </Grid>
