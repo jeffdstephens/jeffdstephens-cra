@@ -2,10 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-import Paper from "@material-ui/core/Paper";
-import Typography from "@material-ui/core/Typography";
 import styled from "styled-components";
-import { yellow } from "@material-ui/core/colors";
 
 // this is my styled component
 const Title = styled.section`
@@ -17,7 +14,6 @@ const Title = styled.section`
   padding-bottom: 20px;
   padding-left: 0.5em;
   padding-right: 1em;
-  fg: yellow;
 `;
 
 const Wrapper = styled.section`
@@ -29,32 +25,34 @@ const Wrapper = styled.section`
   padding-bottom: 1em;
   padding-left: 1em;
   padding-right: 1em;
-  fg: yellow;
 `;
 
-const BlackBar = styled.div`
+const BlackBar = styled.section`
   font-size: 1.5em;
   font-family: Roboto;
-  text-align: left;
+  text-align: center;
   align-items: center;
   padding-bottom: 1em;
   padding-left: 1em;
   padding-right: 1em;
-  bg: black;
-  fg: yellow;
+  color: black;
+  fg: pink;
 `;
 
 const styles = theme => ({
   root: {
     flexGrow: 1
   },
-
+  container: {
+    backgroundColor: "blue",
+    color: "red",
+    width: "75%",
+    height: 5 * theme.spacing.unit
+  },
   paper: {
     //height: 320,
     //width: 240
-    elevation: 0,
-    color: yellow,
-    background: yellow
+    elevation: 0
   },
   control: {
     padding: theme.spacing.unit * 2
@@ -115,7 +113,7 @@ class AboutGrid extends React.Component {
               >
                 <Grid
                   item
-                  sm={10}
+                  sm={8}
                   direction="column"
                   alignItems="center"
                   justify="center"
@@ -134,7 +132,6 @@ class AboutGrid extends React.Component {
             </div>
           </Grid>
         </Grid>
-        <BlackBar>test</BlackBar>
       </div>
     );
   }
