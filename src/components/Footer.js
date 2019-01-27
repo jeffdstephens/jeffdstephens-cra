@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Grid from "@material-ui/core/Grid";
 import { withStyles } from "@material-ui/core/styles";
 import PropTypes from "prop-types";
+import BootstrapNavBar from "./BootstrapNavBar";
 
 const styles = theme => ({
   root: {
@@ -34,11 +35,12 @@ class Footer extends Component {
           className={classes.root}
           justify="center"
           alignItems="center"
-          spacing={24}
+          width="100%"
+          spacing={0}
         >
           <Grid container sm={2} alignItems="center" justify="center">
             <Grid item xs>
-              <a href="https://www.twitter.com/jeffdstephens">
+              <a href="https://www.twitter.com/jeffdstephens" target="_blank">
                 <img
                   src="/images/jeffdstephens-twitter.png"
                   alt=""
@@ -47,7 +49,7 @@ class Footer extends Component {
               </a>
             </Grid>
             <Grid item xs>
-              <a href="https://www.instagram.com/jeffdstephens">
+              <a href="https://www.instagram.com/jeffdstephens" target="_blank">
                 <img
                   src="/images/jeffdstephens-instagram.png"
                   alt=""
@@ -56,7 +58,7 @@ class Footer extends Component {
               </a>
             </Grid>
             <Grid item xs>
-              <a href="https://www.github.com/jeffdstephens">
+              <a href="https://www.github.com/jeffdstephens" target="_blank">
                 <img
                   src="/images/jeffdstephens-github.png"
                   alt=""
@@ -65,7 +67,7 @@ class Footer extends Component {
               </a>
             </Grid>
             <Grid item xs>
-              <a href="https://www.youtube.com/jeffdstephens">
+              <a href="https://www.youtube.com/jeffdstephens" target="_blank">
                 <img
                   src="/images/jeffdstephens-youtube.png"
                   alt=""
@@ -74,7 +76,10 @@ class Footer extends Component {
               </a>
             </Grid>
             <Grid item xs>
-              <a href="https://www.linkedin.com/in/jeffdstephens">
+              <a
+                href="https://www.linkedin.com/in/jeffdstephens"
+                target="_blank"
+              >
                 <img
                   src="/images/jeffdstephens-linkedin.png"
                   alt=""

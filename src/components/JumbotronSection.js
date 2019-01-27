@@ -9,8 +9,6 @@ const GrandTitle = styled.section`
   text-align: center;
   color: white;
   padding-bottom: 0.5em;
-  padding-left: 2em;
-  padding-right: 2em;
 `;
 
 const Title = styled.section`
@@ -19,8 +17,6 @@ const Title = styled.section`
   text-align: center;
   color: white;
   padding-bottom: 1em;
-  padding-left: 2em;
-  padding-right: 2em;
 `;
 
 class JumboIntro extends React.Component {

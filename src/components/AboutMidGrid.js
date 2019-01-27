@@ -33,7 +33,7 @@ const styles = theme => ({
 
 class AboutGrid extends React.Component {
   state = {
-    spacing: "16"
+    spacing: "0"
   };
 
   handleChange = key => (event, value) => {
@@ -48,7 +48,7 @@ class AboutGrid extends React.Component {
 
     return (
       <div>
-        <Grid container className={classes.root} spacing={16}>
+        <Grid container className={classes.root} spacing={0}>
           <Grid item xs={12}>
             <div style={{ display: "flex" }}>
               <Grid
