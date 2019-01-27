@@ -57,7 +57,14 @@ class AboutGrid extends React.Component {
                 justify="center"
                 spacing={Number(spacing)}
               >
-                <Grid container item xs={4} justify="center" direction="column">
+                <Grid
+                  container
+                  item
+                  xs={4}
+                  style={{ marginTop: "1em" }}
+                  justify="center"
+                  direction="column"
+                >
                   <img
                     src="/images/jeffdstephens-avatar.png"
                     width="100%"

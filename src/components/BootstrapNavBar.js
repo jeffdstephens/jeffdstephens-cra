@@ -4,7 +4,7 @@ import { Navbar, Nav, NavItem } from "react-bootstrap";
 class BootstrapNavBar extends React.Component {
   render() {
     return (
-      <Navbar inverse collapseOnSelect>
+      <Navbar inverse collapseOnSelect style={{ marginBottom: "0" }}>
         <Navbar.Header>
           <Navbar.Brand>
             <a href="http://localhost:3000">jeff d stephens</a>
