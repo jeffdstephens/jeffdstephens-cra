@@ -35,7 +35,8 @@ class Footer extends Component {
           className={classes.root}
           justify="center"
           alignItems="center"
-          spacing={24}
+          width="100%"
+          spacing={0}
         >
           <Grid container sm={2} alignItems="center" justify="center">
             <Grid item xs>
