@@ -1,6 +1,7 @@
 import React from "react";
 import { Jumbotron } from "react-bootstrap";
 import styled from "styled-components";
+import { withStyles } from "@material-ui/core/styles";
 
 const GrandTitle = styled.section`
   font-size: 4em;
@@ -47,4 +48,4 @@ const styles = {
   }
 };
 
-export default JumboIntro;
+export default withStyles(styles)(JumboIntro);
