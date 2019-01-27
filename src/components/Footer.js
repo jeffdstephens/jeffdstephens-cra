@@ -7,7 +7,9 @@ const styles = theme => ({
   root: {
     flexGrow: 1,
     color: "white",
-    backgroundColor: "black"
+    backgroundColor: "black",
+    paddingTop: "1em",
+    paddingBottom: "1em"
   }
 });
 
@@ -32,27 +34,52 @@ class Footer extends Component {
           className={classes.root}
           justify="center"
           alignItems="center"
-          spacing={8}
+          spacing={24}
         >
-          <Grid container sm={2} justify="center">
-            <Grid item xs width="25%">
+          <Grid container sm={2} alignItems="center" justify="center">
+            <Grid item xs>
               <a href="https://www.twitter.com/jeffdstephens">
-                <img src="/images/twitter-color.svg" alt="" width="75%" />
+                <img
+                  src="/images/jeffdstephens-twitter.png"
+                  alt=""
+                  width="50%"
+                />
               </a>
             </Grid>
             <Grid item xs>
               <a href="https://www.instagram.com/jeffdstephens">
-                <img src="/images/instagram-color.svg" alt="" width="75%" />
+                <img
+                  src="/images/jeffdstephens-instagram.png"
+                  alt=""
+                  width="50%"
+                />
               </a>
             </Grid>
             <Grid item xs>
               <a href="https://www.github.com/jeffdstephens">
-                <img src="/images/github-color.svg" alt="" width="75%" />
+                <img
+                  src="/images/jeffdstephens-github.png"
+                  alt=""
+                  width="50%"
+                />
               </a>
             </Grid>
             <Grid item xs>
               <a href="https://www.youtube.com/jeffdstephens">
-                <img src="/images/youtube-color.svg" alt="" width="75%" />
+                <img
+                  src="/images/jeffdstephens-youtube.png"
+                  alt=""
+                  width="50%"
+                />
+              </a>
+            </Grid>
+            <Grid item xs>
+              <a href="https://www.linkedin.com/in/jeffdstephens">
+                <img
+                  src="/images/jeffdstephens-linkedin.png"
+                  alt=""
+                  width="50%"
+                />
               </a>
             </Grid>
           </Grid>
