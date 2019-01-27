@@ -6,43 +6,28 @@ import styled from "styled-components";
 
 // this is my styled component
 const Title = styled.section`
-  font-size: 3em;
+  font-size: 5em;
   font-family: Lato;
-  text-align: left;
-  color: black;
+  text-align: center;
+  color: white;
   align-items: center;
   padding-bottom: 20px;
-  padding-left: 0.25em;
-  padding-right: 1em;
 `;
 
 const Wrapper = styled.section`
-  font-size: 1.5em;
+  font-size: 3em;
   font-family: Lato;
-  text-align: left;
-  color: black;
-  align-items: center;
-  padding-bottom: 1em;
-  padding-left: 0.5em;
-  padding-right: 1em;
-`;
-
-const BlackBar = styled.section`
-  font-size: 1.5em;
-  font-family: Roboto;
   text-align: center;
+  color: white;
   align-items: center;
+  padding-top: 1em;
   padding-bottom: 1em;
-  padding-left: 1em;
-  padding-right: 1em;
-  color: black;
-  fg: pink;
 `;
 
 const styles = theme => ({
   root: {
     flexGrow: 1,
-    backgroundColor: "yellow"
+    backgroundColor: "steelblue"
   }
 });
 
@@ -83,7 +68,7 @@ class AboutGrid extends React.Component {
             </div>
           </Grid>
 
-          <Grid item sm={12}>
+          <Grid item xs={12}>
             <div style={{ display: "flex" }}>
               <Grid
                 container
@@ -93,7 +78,7 @@ class AboutGrid extends React.Component {
               >
                 <Grid
                   item
-                  xs={8}
+                  sm={8}
                   direction="column"
                   alignItems="center"
                   justify="center"
