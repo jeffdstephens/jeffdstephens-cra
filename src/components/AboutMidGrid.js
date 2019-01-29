@@ -3,6 +3,9 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import styled from "styled-components";
+import { connect } from "react-redux";
+import { startAction } from "../actions/startAction";
+import { stopAction } from "../actions/stopAction";
 
 // this is my styled component
 const Title = styled.section`
@@ -69,6 +72,11 @@ class AboutGrid extends React.Component {
                     src="/images/jeffdstephens-avatar.png"
                     width="100%"
                     alt=""
+                    onClick={
+                      this.props.smiling
+                        ? this.props.stopAction
+                        : this.props.startAction
+                    }
                   />
                 </Grid>
               </Grid>
@@ -113,4 +121,15 @@ AboutGrid.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(AboutGrid);
+const mapStateToProps = state => ({
+  ...state
+});
+const mapDispatchToProps = dispatch => ({
+  startAction: () => dispatch(startAction),
+  stopAction: () => dispatch(stopAction)
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withStyles(styles)(AboutGrid));
