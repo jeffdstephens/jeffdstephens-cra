@@ -3,9 +3,6 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import styled from "styled-components";
-import { connect } from "react-redux";
-import { startAction } from "../actions/startAction";
-import { stopAction } from "../actions/stopAction";
 
 // this is my styled component
 const Title = styled.section`
@@ -35,19 +32,13 @@ const styles = theme => ({
 });
 
 class AboutGrid extends React.Component {
-  state = {
-    spacing: "0"
-  };
-
-  handleChange = key => (event, value) => {
-    this.setState({
-      [key]: value
-    });
-  };
+  constructor() {
+    super();
+    this.state = { isSmiling: false };
+  }
 
   render() {
     const { classes } = this.props;
-    const { spacing } = this.state;
 
     return (
       <div>
@@ -58,7 +49,7 @@ class AboutGrid extends React.Component {
                 container
                 className={classes.demo}
                 justify="center"
-                spacing={Number(spacing)}
+                spacing={Number(0)}
               >
                 <Grid
                   container
@@ -68,16 +59,25 @@ class AboutGrid extends React.Component {
                   justify="center"
                   direction="column"
                 >
-                  <img
-                    src="/images/jeffdstephens-avatar.png"
-                    width="100%"
-                    alt=""
-                    onClick={
-                      this.props.smiling
-                        ? this.props.stopAction
-                        : this.props.startAction
-                    }
-                  />
+                  {this.state.isSmiling ? (
+                    <img
+                      src="/images/jeffdstephens-avatar-smiling.png"
+                      width="100%"
+                      alt=""
+                      onClick={() =>
+                        this.setState({ isSmiling: !this.state.isSmiling })
+                      }
+                    />
+                  ) : (
+                    <img
+                      src="/images/jeffdstephens-avatar.png"
+                      width="100%"
+                      alt=""
+                      onClick={() =>
+                        this.setState({ isSmiling: !this.state.isSmiling })
+                      }
+                    />
+                  )}
                 </Grid>
               </Grid>
             </div>
@@ -89,7 +89,7 @@ class AboutGrid extends React.Component {
                 container
                 className={classes.demo}
                 justify="center"
-                spacing={Number(spacing)}
+                spacing={Number(0)}
               >
                 <Grid
                   item
@@ -121,15 +121,8 @@ AboutGrid.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-const mapStateToProps = state => ({
-  ...state
-});
-const mapDispatchToProps = dispatch => ({
-  startAction: () => dispatch(startAction),
-  stopAction: () => dispatch(stopAction)
-});
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(withStyles(styles)(AboutGrid));
+//export default connect(
+//  mapStateToProps,
+//  mapDispatchToProps
+//)(withStyles(styles)(AboutGrid));
+export default withStyles(styles)(AboutGrid);
