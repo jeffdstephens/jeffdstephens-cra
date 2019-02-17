@@ -32,19 +32,13 @@ const styles = theme => ({
 });
 
 class AboutGrid extends React.Component {
-  state = {
-    spacing: "0"
-  };
-
-  handleChange = key => (event, value) => {
-    this.setState({
-      [key]: value
-    });
-  };
+  constructor() {
+    super();
+    this.state = { isSmiling: false };
+  }
 
   render() {
     const { classes } = this.props;
-    const { spacing } = this.state;
 
     return (
       <div>
@@ -55,7 +49,7 @@ class AboutGrid extends React.Component {
                 container
                 className={classes.demo}
                 justify="center"
-                spacing={Number(spacing)}
+                spacing={Number(0)}
               >
                 <Grid
                   container
@@ -65,11 +59,25 @@ class AboutGrid extends React.Component {
                   justify="center"
                   direction="column"
                 >
-                  <img
-                    src="/images/jeffdstephens-avatar.png"
-                    width="100%"
-                    alt=""
-                  />
+                  {this.state.isSmiling ? (
+                    <img
+                      src="/images/jeffdstephens-avatar-smiling.png"
+                      width="100%"
+                      alt=""
+                      onClick={() =>
+                        this.setState({ isSmiling: !this.state.isSmiling })
+                      }
+                    />
+                  ) : (
+                    <img
+                      src="/images/jeffdstephens-avatar.png"
+                      width="100%"
+                      alt=""
+                      onClick={() =>
+                        this.setState({ isSmiling: !this.state.isSmiling })
+                      }
+                    />
+                  )}
                 </Grid>
               </Grid>
             </div>
@@ -81,7 +89,7 @@ class AboutGrid extends React.Component {
                 container
                 className={classes.demo}
                 justify="center"
-                spacing={Number(spacing)}
+                spacing={Number(0)}
               >
                 <Grid
                   item
@@ -113,4 +121,8 @@ AboutGrid.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
+//export default connect(
+//  mapStateToProps,
+//  mapDispatchToProps
+//)(withStyles(styles)(AboutGrid));
 export default withStyles(styles)(AboutGrid);
