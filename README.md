@@ -1,2 +1,2 @@
 # jeffdstephens
-Personal website under development using React.
+Personal React website under development using create-react-app. 
